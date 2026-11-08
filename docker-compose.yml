@@ -1,0 +1,65 @@
+# Watchtower (3D print farm manager) with a private Tailscale Serve sidecar.
+# The UI is only reachable through the sidecar at https://watchtower.<tailnet>.ts.net.
+# No host ports are published and Funnel is explicitly disabled.
+# Machine-specific values (paths, TS_AUTHKEY) live in .env; see .env.example.
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        WATCHTOWER_DEB: ${WATCHTOWER_DEB:?set WATCHTOWER_DEB in .env}
+        PUID: ${PUID:?set PUID in .env}
+        PGID: ${PGID:?set PGID in .env}
+    image: local/watchtower3d:latest
+    container_name: watchtower
+    hostname: watchtower-app
+    init: true
+    stop_grace_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      - TZ=${TZ:?set TZ in .env}
+    volumes:
+      - ${WATCHTOWER_DATA_PATH:?set WATCHTOWER_DATA_PATH in .env}:/var/lib/watchtower
+    networks:
+      - watchtower-private
+      - watchtower-egress
+    depends_on:
+      tailscale:
+        condition: service_started
+    restart: unless-stopped
+
+  tailscale:
+    image: tailscale/tailscale:latest
+    container_name: watchtower-tailscale
+    # Keep Docker DNS distinct from the tailnet hostname (TS_HOSTNAME).
+    hostname: watchtower-tailscale
+    environment:
+      TS_AUTHKEY: ${TS_AUTHKEY:-}
+      TS_HOSTNAME: ${TS_HOSTNAME:?set TS_HOSTNAME in .env}
+      TS_STATE_DIR: /var/lib/tailscale
+      TS_SERVE_CONFIG: /config/serve.json
+      TS_USERSPACE: "false"
+      TS_EXTRA_ARGS: --accept-dns=false
+    volumes:
+      - ${TS_STATE_PATH:?set TS_STATE_PATH in .env}:/var/lib/tailscale
+      - ./tailscale/serve.json:/config/serve.json:ro
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    networks:
+      - watchtower-private
+      - watchtower-egress
+    restart: unless-stopped
+
+networks:
+  # Internal: carries Tailscale Serve traffic only; no default route out.
+  watchtower-private:
+    name: watchtower-private
+    internal: true
+  # Normal bridge giving the app and sidecar egress (printers on the LAN, cloud APIs).
+  watchtower-egress:
+    name: watchtower-egress
+    driver: bridge

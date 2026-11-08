@@ -1,0 +1,26 @@
+# Watchtower (3D print farm manager) WITHOUT Tailscale.
+# Publishes the web UI on a host port instead. Use this file instead of
+# docker-compose.yml:  docker compose -f docker-compose.standalone.yml up -d --build
+# Put it behind your own reverse proxy / VPN if it will be reachable beyond your LAN.
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        WATCHTOWER_DEB: ${WATCHTOWER_DEB:?set WATCHTOWER_DEB in .env}
+        PUID: ${PUID:?set PUID in .env}
+        PGID: ${PGID:?set PGID in .env}
+    image: local/watchtower3d:latest
+    container_name: watchtower
+    init: true
+    stop_grace_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      - TZ=${TZ:?set TZ in .env}
+    ports:
+      - "${WATCHTOWER_WEB_PORT:?set WATCHTOWER_WEB_PORT in .env}:80"
+    volumes:
+      - ${WATCHTOWER_DATA_PATH:?set WATCHTOWER_DATA_PATH in .env}:/var/lib/watchtower
+    restart: unless-stopped
