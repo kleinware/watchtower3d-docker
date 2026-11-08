@@ -20,6 +20,9 @@ services:
       - no-new-privileges:true
     environment:
       - TZ=${TZ:?set TZ in .env}
+      # Requests arrive via Tailscale Serve with the tailnet hostname as Origin, which
+      # Watchtower's host guard rejects. Only the sidecar can reach this container.
+      - WATCHTOWER_HOST_GUARD=off
     volumes:
       - ${WATCHTOWER_DATA_PATH:?set WATCHTOWER_DATA_PATH in .env}:/var/lib/watchtower
     networks:
