@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # still creates the unprivileged "watchtower" user and /var/lib/watchtower.
 COPY ${WATCHTOWER_DEB} /tmp/watchtower.deb
 RUN apt-get update \
- && apt-get install -y --no-install-recommends adduser ca-certificates /tmp/watchtower.deb \
+ && apt-get install -y --no-install-recommends adduser ca-certificates tzdata /tmp/watchtower.deb \
       libegl1 libegl-mesa0 libgl1-mesa-dri libopengl0 libglu1-mesa \
  && rm -rf /tmp/watchtower.deb /var/lib/apt/lists/*
 
