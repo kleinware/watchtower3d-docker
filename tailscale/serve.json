@@ -2,6 +2,321 @@
   "TCP": {
     "443": {
       "HTTPS": true
+    },
+    "8883": {
+      "TCPForward": "watchtower:8883"
+    },
+    "990": {
+      "TCPForward": "watchtower:990"
+    },
+    "3000": {
+      "TCPForward": "watchtower:3000"
+    },
+    "3002": {
+      "TCPForward": "watchtower:3002"
+    },
+    "60000": {
+      "TCPForward": "watchtower:60000"
+    },
+    "60001": {
+      "TCPForward": "watchtower:60001"
+    },
+    "60002": {
+      "TCPForward": "watchtower:60002"
+    },
+    "60003": {
+      "TCPForward": "watchtower:60003"
+    },
+    "60004": {
+      "TCPForward": "watchtower:60004"
+    },
+    "60005": {
+      "TCPForward": "watchtower:60005"
+    },
+    "60006": {
+      "TCPForward": "watchtower:60006"
+    },
+    "60007": {
+      "TCPForward": "watchtower:60007"
+    },
+    "60008": {
+      "TCPForward": "watchtower:60008"
+    },
+    "60009": {
+      "TCPForward": "watchtower:60009"
+    },
+    "60010": {
+      "TCPForward": "watchtower:60010"
+    },
+    "60011": {
+      "TCPForward": "watchtower:60011"
+    },
+    "60012": {
+      "TCPForward": "watchtower:60012"
+    },
+    "60013": {
+      "TCPForward": "watchtower:60013"
+    },
+    "60014": {
+      "TCPForward": "watchtower:60014"
+    },
+    "60015": {
+      "TCPForward": "watchtower:60015"
+    },
+    "60016": {
+      "TCPForward": "watchtower:60016"
+    },
+    "60017": {
+      "TCPForward": "watchtower:60017"
+    },
+    "60018": {
+      "TCPForward": "watchtower:60018"
+    },
+    "60019": {
+      "TCPForward": "watchtower:60019"
+    },
+    "60020": {
+      "TCPForward": "watchtower:60020"
+    },
+    "60021": {
+      "TCPForward": "watchtower:60021"
+    },
+    "60022": {
+      "TCPForward": "watchtower:60022"
+    },
+    "60023": {
+      "TCPForward": "watchtower:60023"
+    },
+    "60024": {
+      "TCPForward": "watchtower:60024"
+    },
+    "60025": {
+      "TCPForward": "watchtower:60025"
+    },
+    "60026": {
+      "TCPForward": "watchtower:60026"
+    },
+    "60027": {
+      "TCPForward": "watchtower:60027"
+    },
+    "60028": {
+      "TCPForward": "watchtower:60028"
+    },
+    "60029": {
+      "TCPForward": "watchtower:60029"
+    },
+    "60030": {
+      "TCPForward": "watchtower:60030"
+    },
+    "60031": {
+      "TCPForward": "watchtower:60031"
+    },
+    "60032": {
+      "TCPForward": "watchtower:60032"
+    },
+    "60033": {
+      "TCPForward": "watchtower:60033"
+    },
+    "60034": {
+      "TCPForward": "watchtower:60034"
+    },
+    "60035": {
+      "TCPForward": "watchtower:60035"
+    },
+    "60036": {
+      "TCPForward": "watchtower:60036"
+    },
+    "60037": {
+      "TCPForward": "watchtower:60037"
+    },
+    "60038": {
+      "TCPForward": "watchtower:60038"
+    },
+    "60039": {
+      "TCPForward": "watchtower:60039"
+    },
+    "60040": {
+      "TCPForward": "watchtower:60040"
+    },
+    "60041": {
+      "TCPForward": "watchtower:60041"
+    },
+    "60042": {
+      "TCPForward": "watchtower:60042"
+    },
+    "60043": {
+      "TCPForward": "watchtower:60043"
+    },
+    "60044": {
+      "TCPForward": "watchtower:60044"
+    },
+    "60045": {
+      "TCPForward": "watchtower:60045"
+    },
+    "60046": {
+      "TCPForward": "watchtower:60046"
+    },
+    "60047": {
+      "TCPForward": "watchtower:60047"
+    },
+    "60048": {
+      "TCPForward": "watchtower:60048"
+    },
+    "60049": {
+      "TCPForward": "watchtower:60049"
+    },
+    "60050": {
+      "TCPForward": "watchtower:60050"
+    },
+    "60051": {
+      "TCPForward": "watchtower:60051"
+    },
+    "60052": {
+      "TCPForward": "watchtower:60052"
+    },
+    "60053": {
+      "TCPForward": "watchtower:60053"
+    },
+    "60054": {
+      "TCPForward": "watchtower:60054"
+    },
+    "60055": {
+      "TCPForward": "watchtower:60055"
+    },
+    "60056": {
+      "TCPForward": "watchtower:60056"
+    },
+    "60057": {
+      "TCPForward": "watchtower:60057"
+    },
+    "60058": {
+      "TCPForward": "watchtower:60058"
+    },
+    "60059": {
+      "TCPForward": "watchtower:60059"
+    },
+    "60060": {
+      "TCPForward": "watchtower:60060"
+    },
+    "60061": {
+      "TCPForward": "watchtower:60061"
+    },
+    "60062": {
+      "TCPForward": "watchtower:60062"
+    },
+    "60063": {
+      "TCPForward": "watchtower:60063"
+    },
+    "60064": {
+      "TCPForward": "watchtower:60064"
+    },
+    "60065": {
+      "TCPForward": "watchtower:60065"
+    },
+    "60066": {
+      "TCPForward": "watchtower:60066"
+    },
+    "60067": {
+      "TCPForward": "watchtower:60067"
+    },
+    "60068": {
+      "TCPForward": "watchtower:60068"
+    },
+    "60069": {
+      "TCPForward": "watchtower:60069"
+    },
+    "60070": {
+      "TCPForward": "watchtower:60070"
+    },
+    "60071": {
+      "TCPForward": "watchtower:60071"
+    },
+    "60072": {
+      "TCPForward": "watchtower:60072"
+    },
+    "60073": {
+      "TCPForward": "watchtower:60073"
+    },
+    "60074": {
+      "TCPForward": "watchtower:60074"
+    },
+    "60075": {
+      "TCPForward": "watchtower:60075"
+    },
+    "60076": {
+      "TCPForward": "watchtower:60076"
+    },
+    "60077": {
+      "TCPForward": "watchtower:60077"
+    },
+    "60078": {
+      "TCPForward": "watchtower:60078"
+    },
+    "60079": {
+      "TCPForward": "watchtower:60079"
+    },
+    "60080": {
+      "TCPForward": "watchtower:60080"
+    },
+    "60081": {
+      "TCPForward": "watchtower:60081"
+    },
+    "60082": {
+      "TCPForward": "watchtower:60082"
+    },
+    "60083": {
+      "TCPForward": "watchtower:60083"
+    },
+    "60084": {
+      "TCPForward": "watchtower:60084"
+    },
+    "60085": {
+      "TCPForward": "watchtower:60085"
+    },
+    "60086": {
+      "TCPForward": "watchtower:60086"
+    },
+    "60087": {
+      "TCPForward": "watchtower:60087"
+    },
+    "60088": {
+      "TCPForward": "watchtower:60088"
+    },
+    "60089": {
+      "TCPForward": "watchtower:60089"
+    },
+    "60090": {
+      "TCPForward": "watchtower:60090"
+    },
+    "60091": {
+      "TCPForward": "watchtower:60091"
+    },
+    "60092": {
+      "TCPForward": "watchtower:60092"
+    },
+    "60093": {
+      "TCPForward": "watchtower:60093"
+    },
+    "60094": {
+      "TCPForward": "watchtower:60094"
+    },
+    "60095": {
+      "TCPForward": "watchtower:60095"
+    },
+    "60096": {
+      "TCPForward": "watchtower:60096"
+    },
+    "60097": {
+      "TCPForward": "watchtower:60097"
+    },
+    "60098": {
+      "TCPForward": "watchtower:60098"
+    },
+    "60099": {
+      "TCPForward": "watchtower:60099"
+    },
+    "60100": {
+      "TCPForward": "watchtower:60100"
     }
   },
   "Web": {
